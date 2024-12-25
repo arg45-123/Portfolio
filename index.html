@@ -1,0 +1,737 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Arpan Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #141E30, #243B55); /* Dark Blue Gradient */
+            color: #fff; /* White text for better contrast */
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: #1E273A; /* Slightly darker blue */
+            color: #fff;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .navlinks {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            color: white;
+        }
+
+        .navlinks li {
+            cursor: pointer;
+            font-size: 18px;
+            transition: color 0.3s ease;
+            color: white;
+
+        }
+
+        .navlinks li:hover {
+            color: #00bcd4; /* Teal Hover Color */
+        }
+
+        /* Banner Section */
+        .Banner {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 10%;
+            background: linear-gradient(to bottom right, #141E30, #243B55); /* Match body background */
+            color: white;
+            align-items: center;
+            height: 60vh;
+        }
+
+        .details {
+            width: 60%;
+        }
+
+        .t1 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .t2 {
+            font-size: 60px;
+            font-weight: bold;
+            color: #fff; /* White text on gradient */
+        }
+
+        .t3 {
+            font-size: 20px;
+            margin: 15px 0;
+        }
+
+        .cta {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color:rgb(41, 184, 184); 
+            border: none;
+            color: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: 2px solid rgb(41, 184, 184);
+        }
+
+        .cta:hover {
+            background-color: #1E273A;
+        }
+
+        .person img {
+            width: 300px;
+            border-radius: 20%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            align-self: center;
+            height: 359px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+           
+        }
+        .person img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 10%;
+            background-color: #243B55; /* Match button color */
+            text-align: center;
+        }
+
+        .sectiontitle {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #fff; /* White text on dark background */
+        }
+
+        .sec-child {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .services1 {
+            width: 30%;
+            padding: 20px;
+            background: #1E273A; /* Match header background */
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .services1:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .services1 .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #fff; /* White icon */
+        }
+
+        .services1 h2 {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #fff; /* White text */
+        }
+
+        .services1 p {
+            font-size: 16px;
+            color: #fff; /* White text */
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        /* Certificates Section */
+        .certificates {
+            padding: 60px 10%;
+           background: #00bcd4; /* Match services background */
+            text-align: center;
+        }
+
+        .certificate-gallery {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap; 
+            margin-bottom: 50px;
+            margin-top: 50px;
+            
+        }
+
+        .certificate img {
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            /* background-color: #5f8ec4; */
+        }
+
+        .certificate img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Quote Section */
+        .quote {
+            background-color: #1E273A; /* Match header/services background */
+            color: white;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .quote-area {
+            font-size: 28px;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .Banner {
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 10%;
+            }
+
+            .details {
+                width: 100%;
+                text-align: center;
+            }
+
+            .person img {
+                width: 180px;
+            }
+
+            .sec-child {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services1 {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+
+            .quote {
+                padding: 60px 10%;
+            }
+        }
+
+    
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .certificates-section {
+            padding: 50px;
+            text-align: center;
+            color: rgb(98, 39, 199);
+            background: linear-gradient(135deg, #002D62, #00509E);
+        }
+
+        .certificates-section h1 {
+            margin-bottom: 20px;
+        }
+
+        .certificate-card {
+            display: inline-block;
+            background:  #5f8ec4;
+            color: black;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+          
+        }
+
+        .certificate-card:hover {
+            transform: scale(1.05);
+        }
+        
+
+        .projects
+        { 
+            background-color: #243B55;
+        }
+
+
+        .project-details
+        {
+            /* color: black; */
+            background: #1E273A;
+            /* border-radius: 10px; */
+            /* box-shadow: #fff; */
+            /* border: #fff; */
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .achievements
+        {
+            background: #1E273A;
+            border-radius: 5px;
+            margin-left: 150px;
+            margin-right: 150px;
+            border: 0.5px;
+            border-radius: 8px;
+            box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(241, 240, 240);
+        }
+        .sectiontitle
+        {
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        /* .cta2
+        {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color:rgb(41, 184, 184); 
+            border: none;
+            color: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: 2px solid rgb(41, 184, 184);
+        } */
+         .person
+         {
+          background-color:transparent;
+          width: 360px;
+         }
+         .contact-section {
+      background-color:transparent;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-details {
+      margin: 0 auto;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .contact-item {
+      margin-bottom: 20px;
+    }
+
+    .contact-item span {
+      font-weight: bold;
+      color: white;
+    }
+
+    .contact-item a {
+      color: rgb(229, 188, 188);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+    .education-section {
+        background-color: #243B55;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .education-section h2 {
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .education-timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .education-item {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #1E273A; 
+      border: 1px solid rgb(253, 249, 249);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .education-item h3 {
+      font-size: 1.2rem;
+      margin: 0;
+      color: rgb(206, 196, 178);
+    }
+
+    .education-item p {
+      margin: 5px 0;
+      color:rgb(103, 177, 198);
+      line-height: 1.6;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: rgb(242, 237, 237);
+    }
+
+   .down
+   {
+    color:rgb(103, 177, 198) ;
+   }
+
+
+         
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <p class="arpgo">Arg45.portfolio</p>
+        </div>
+        <nav class="nav">
+            <ul class="navlinks">
+                <li>Home</li>
+                <!-- <li>Projects</li> -->
+                <a href="https://github.com/arg45-123"><li>Projects</li></a>
+                <li>Visits</li>
+                <li>29.com</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="Banner">
+        <div class="details">
+            <p class="t1">I am,</p>
+            <p class="t2">Arpan</p>
+            <p class="t3">Student | Bachelor | Mechanical | Coder</p>
+            <!-- <button class="cta">Contact Me</button> -->
+            <a href="https://arg45-123.github.io/arg-projects/" target="_blank"> <button class="cta">Contact Me</button></a>
+        </div>
+        <div class="person"> 
+           <center> <img class="personimg" src="./argimg.jpg" alt="Person"></center>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <h1 class="sectiontitle">What I am,</h1>
+        <div class="sec-child">
+            <div class="services1">
+                <i class="fa-solid fa-laptop icon"></i>
+                <h2>Python Developer</h2>
+                <p>webpage . hosting . contact forms</p>
+                <p class="services-text">Lorem ipsum dolor sit amet.</p>
+                <button class="servicesbt">View More</button>
+            </div>
+            <div class="services1">
+                <i class="fa-solid fa-laptop icon"></i>
+                <h2>Website Developer</h2>
+                <p>webpage . hosting . contact forms</p>
+                <p class="services-text">Lorem ipsum dolor sit amet.</p>
+                <button class="servicesbt">View More</button>
+            </div>
+            <div class="services1">
+                <i class="fa-solid fa-cogs icon"></i>
+                <h2>Mechanical Engineer</h2>
+                <p>design . prototyping . analysis</p>
+                <p class="services-text">Lorem ipsum dolor sit amet.</p>
+                <button class="servicesbt">View More</button>
+            </div>
+            <!-- <div class="services1">
+                <i class="fa-solid fa-drafting-compass icon"></i>
+                <h2>Design Engineer</h2>
+                <p>CAD . SolidWorks . Simulation</p>
+                <p class="services-text">Lorem ipsum dolor sit amet.</p>
+                <button class="servicesbt">View More</button>
+            </div> -->
+        </div>
+    </section>
+            
+    <!-- Certificates Section -->
+     <!-- Other sections of your webpage -->
+     <section class="education-section">
+        <h2>My Educational Background</h2>
+        <div class="education-timeline">
+          <div class="education-item">
+            <h3>Sunrise English School, Teosa</h3>
+            <p><span class="highlight">Percentage:</span> 95%</p>
+          </div>
+          <div class="education-item">
+            <h3>Shri. Shivaji Science College, Amravati</h3>
+            <p><span class="highlight">Percentage:</span> 80.33%</p>
+          </div>
+          <div class="education-item">
+            <h3>Prof. Ram Meghe Institute of Technology and Research</h3>
+            <p><span class="highlight">CGPA:</span> 9.21</p>
+            <p><span class="highlight">Current Year:</span> 2nd Year</p>
+            <p class="down"><span class="highlight">Resume:</span><a href="ArpanGohatre_InternshalaResume (2).pdf" target="_blank"> Download</a> </p>
+          </div>
+          <div class="education-item">
+            <h3>Achievements</h3>
+            <p>Received a <span class="highlight">Silver Medal</span> in the National Talent Search Exam.</p>
+          </div>
+        </div>
+      </section>
+    
+
+<section id="certificates">
+    <h1 class="sectiontitle"><center>Course Certificates</center></h1>
+    <div class="certificate-gallery">
+        <div class="certificate">
+            <img src="WhatsApp Image 2024-12-22 at 12.52.39_6a5657e7.jpg" alt="Certificate 1" onclick="openFullScreen(this)">
+        </div>
+        <div class="certificate">
+            <img src="WhatsApp Image 2024-12-22 at 12.48.37_f783e58f.jpg" alt="Certificate 2" onclick="openFullScreen(this)">
+        </div>
+        <div class="certificate">
+            <img src="WhatsApp Image 2024-12-22 at 13.00.44_43b36f34.jpg" alt="Certificate 3" onclick="openFullScreen(this)">
+        </div>
+        <div class="certificate">
+            <img src="hhhhhhh.jpg" alt="Certificate 4" onclick="openFullScreen(this)">
+        </div>
+        <div class="certificate">
+            <img src="rrrrrr.jpg" alt="Certificate 5" onclick="openFullScreen(this)">
+        </div>
+        <div class="certificate">
+            <img src="jaaavv.jpg" alt="Certificate 6" onclick="openFullScreen(this)">
+        </div>
+        <div class="certificate">
+            <img src="ccccccc.jpg" alt="Certificate 7" onclick="openFullScreen(this)">
+        </div>
+    </div>
+</section>
+<script>
+    // JavaScript for Full-Screen Modal
+
+// Function to open the modal
+function openFullScreen(image) {
+    // Create a modal if it doesn't already exist
+    let modal = document.getElementById('certificate-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'certificate-modal';
+        modal.className = 'modal';
+        document.body.appendChild(modal);
+
+        // Add modal content
+        const modalContent = document.createElement('img');
+        modalContent.id = 'modal-content';
+        modalContent.className = 'modal-content';
+        modal.appendChild(modalContent);
+
+        // Add close button
+        const closeBtn = document.createElement('span');
+        closeBtn.className = 'close';
+        closeBtn.innerHTML = '&times;';
+        modal.appendChild(closeBtn);
+
+        // Close modal on clicking the close button
+        closeBtn.onclick = function () {
+            modal.style.display = 'none';
+        };
+
+        // Close modal on clicking outside the image
+        modal.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    }
+
+    // Set the clicked image in the modal and show it
+    const modalImg = document.getElementById('modal-content');
+    modalImg.src = image.src;
+    modal.style.display = 'block';
+}
+</script>
+    <!-- <section class="certificates">
+        <h1 class="sectiontitle">My Certificates</h1>
+        <div class="cert-container">
+            <div class="certificate">
+                <p><b>Python Basics</b></p>
+                <p>Issued by XYZ Platform</p>
+            </div>
+            <div class="certificate">
+                <p><b>Web Development</b></p>
+                <p>Issued by ABC Platform</p>
+            </div>
+            <div class="certificate">
+                <p><b>Mechanical Design</b></p>
+                <p>Issued by DEF Platform</p>
+            </div>
+            <div class="certificate">
+                <p><b>Leadership Training</b></p>
+                <p>Issued by GHI Platform</p>
+            </div>
+        </div> -->
+    </section>
+    <section id="certificates">
+        <h1 class="sectiontitle"><center>Internships</center></h1>
+        <div class="certificate-gallery">
+            <div class="certificate">
+                <img src="WhatsApp Image 2024-12-22 at 12.54.51_97e51e3e.jpg" alt="Certificate 1" onclick="openFullScreen(this)">
+            </div>
+            <div class="certificate">
+                <img src="aspa.jpg" alt="Certificate 2" onclick="openFullScreen(this)">
+            </div>
+            <!-- <div class="certificate">
+                <img src="WhatsApp Image 2024-12-22 at 13.00.44_43b36f34.jpg" alt="Certificate 3" onclick="openFullScreen(this)">
+            </div> -->
+            <!-- <div class="certificate">
+                <img src="hhhhhhh.jpg" alt="Certificate 4" onclick="openFullScreen(this)">
+            </div>
+            <div class="certificate">
+                <img src="rrrrrr.jpg" alt="Certificate 5" onclick="openFullScreen(this)">
+            </div>
+            <div class="certificate">
+                <img src="jaaavv.jpg" alt="Certificate 6" onclick="openFullScreen(this)">
+            </div>
+            <div class="certificate">
+                <img src="ccccccc.jpg" alt="Certificate 7" onclick="openFullScreen(this)">
+            </div> -->
+        </div>
+    </section>
+    <!-- Survey Report Project -->
+    <section class="projects">
+      <center>
+          <h1 class="sectiontitle">Projects</h1>
+        </center>   
+        <div class="project-details">
+            <p><b>Project Title:</b> Drinking Water Survey</p>
+            <p><b>Role:</b> Project Lead</p>
+            <p><b>Tools Used:</b> All appratus that tests the water quality ,Web Technologies</p>
+            <p><b>Description:</b> Conducted a comprehensive drinking water survey to analyze pH, hardness, and TDS levels in various departments. Presented findings in a website format.</p>
+            <!-- <button class="cta">View Project</button> -->
+            <a href="https://arg45-123.github.io/Drinking-water-survey-report/" target="_blank"><button class="cta">View Project</button></a>
+        </div>
+        <div class="project-details">
+            <p><b>Project Title:</b> Webpage using only HTML</p>
+            <p><b>Role:</b> Project Lead</p>
+            <p><b>Language Used:</b> HTML</p>
+            <p><b>Description:</b> Conducted a comprehensive drinking water survey to analyze pH, hardness, and TDS levels in various departments. Presented findings in a website format.</p>
+            <!-- <button class="cta">View Project</button> -->
+            <a href="https://arg45-123.github.io/My-Projects/" target="_blank"><button class="cta">View Project</button></a>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="achievements">
+        <h1 class="sectiontitle">Achievements</h1>
+        <div class="sec-child achievements-child">
+            <div class="achievement">
+                <p class="number">9.21</p>
+                <p class="tags">CGPA</p>
+            </div>
+            <div class="achievement">
+                <p class="number">11+</p>
+                <p class="tags">Certificates</p>
+            </div>
+            <div class="achievement">
+                <p class="number">80.33%</p>
+                <p class="tags">HSC Board</p>
+            </div>
+            <div class="achievement">
+                <p class="number">3</p>
+                <p class="tags">Projects</p>
+            </div>
+            <!-- <div class="achievement">
+                <p class="number">200+</p>
+                <p class="tags">Friends</p>
+            </div> -->
+        </div>
+    </section>
+    <!-- Contact section -->
+     <section class="contact-section"><h2>Contact me</h2>
+        <div class="contact-details">
+            <div class="contact-item">
+              <span>Email:</span> <a href="mailto:arpangohatre@gmail.com">arpangohatre@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <span>Phone:</span> 9359046139
+            </div>
+            <div class="contact-item">
+              <span>LinkedIn:</span> <a href="https://www.linkedin.com/in/arpan-gohatre-21b62a290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"> Click here</a>
+            </div>
+            <div class="contact-item">
+              <span>GitHub:</span> <a href="https://github.com/arg45-123" target="_blank">https://github.com</a>
+            </div>
+        </div>
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </section>
+
+    <!-- Quotes Section -->
+    <section class="quote">
+        <div class="overlay">
+            <div class="quote-area">
+                <input type="text" class="inp-email" placeholder="Enter Your Email">
+                <button class="cta">Get Output</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section
+    <section class="clients">
+        <h1 class="sectiontitle">Our Clients</h1>
+        <div class="sun"></div>
+        <div>
+            <input type="text" placeholder="Search Clients">
+        </div>
+        <button class="bts"></button>
+    </section> -->
+
+</body>
+</html>
